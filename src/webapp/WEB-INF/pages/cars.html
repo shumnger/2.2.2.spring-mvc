@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+</head>
+<body>
+<table border="5">
+    <thead>
+    <tr>
+        <th> Brand </th>
+        <th> Model </th>
+        <th> Year </th>
+    </tr>
+    </thead>
+    <tbody>
+    <html>
+    <head>
+        <!--        <meta charset="utf-8">-->
+        <title>Тег SPAN</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+            .letter {
+                color: #0d38ee;
+                font-size: 150%;
+                font-family: "Trebuchet MS", serif;
+                position: relative;
+                top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+    <tr th:if="${cars.isEmpty()}">
+        <td colspan="2"> No Cars Available </td>
+    </tr>
+    <tr th:each="car : ${cars}">
+        <td><span class="letter" th:text="${car.getBrand()}"> Title </span></td>
+        <td><span class="letter" th:text="${car.getModel()}"> Author </span></td>
+        <td><span class="letter" th:text="${car.getYear()}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
