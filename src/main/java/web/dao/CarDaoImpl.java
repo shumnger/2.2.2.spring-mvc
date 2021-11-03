@@ -18,4 +18,14 @@ public class CarDaoImpl implements CarDao {
         allCars.add(new Car("Lada", "VESTA", 2019));
         return allCars;
     }
+
+    @Override
+    public List<Car> getCarsByCount(Integer count) {
+        List<Car> allCars = getAllCars();
+        if (count > allCars.size() || count < 0) {
+            return allCars;
+        } else {
+            return allCars.subList(0, count);
+        }
+    }
 }

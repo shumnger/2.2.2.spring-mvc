@@ -8,4 +8,6 @@ public interface CarDao {
 
     List<Car> getAllCars();
 
+    List<Car> getCarsByCount(Integer count);
+
 }
